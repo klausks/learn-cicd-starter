@@ -37,7 +37,7 @@ func TestGetAPIKey(t *testing.T) {
 			if tc.err != nil && gotErr == nil {
 				t.Fatal("Expected error error", tc.err)
 			}
-			if tc.err != nil && gotErr != nil {
+			if tc.err == nil && gotErr != nil {
 				t.Fatal("Unexpected error", gotErr)
 			}
 			diff := cmp.Diff(got, tc.expected)
