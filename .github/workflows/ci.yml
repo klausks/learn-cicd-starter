@@ -5,6 +5,12 @@ on:
     branches: [main]
 
 jobs:
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check style
+        run: test -z $(go fmt ./...)
   tests:
     name: Tests
     runs-on: ubuntu-latest
